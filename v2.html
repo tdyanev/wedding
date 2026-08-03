@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en"><head><script type="text/javascript" src="https://cfa40pq2c3wvsmcz.canvacode.com/rmdGj_1aECy5nwKRhyeoUuW5BRXzdQ7QPXn6tUWLQx-Yg8_QJzK-YetdW3Mbpcr1mWFbUEAZjZIYR19sL0wMo51KCvZA20fWZ4xBjNQGUO0J6vUzywm0fpMkdpZLWg99bgFJ3NofQkrRj5FuLmoES2mpOpPXIM0q8h-X4v_lAHgoWPI4sCM7xz1H_3Is1DeS63MAot6Fxt2-j1sbdWqeaM7Bj4_fLJGZ4Q6wgDjCtGsEMebUNcr1sPvuxzMRFG-1CS18BN950vcLB5rOJtirH5xfbpfSITsvOazPJ8ebvezDF7QcRCjL6TP3Hp-f_AaDrZyNKui5tz9d_N5NYYlyBjbHLCDsVf7gC9JVVanT8xVfFRZ95tLq0NH2jl3PxkTzj3wkdbmYuQdJ8jeGyYLbySn6ZU3h0CTxktp8eLhiAPB6FDFzgwNbqsesdzwcjPbZOFgdMEQF5L_0YXSxRtorAjY8ZrKcPK2SFXK0-T-xCnYu-yK1HQ80PnnRT3tr6Cg7N8B7vkKlD6mSRG55OA36W-JrtZt5e1wKUHs2SR7ey1HiBO6sF3ZPO7r4v06Y9Fg5AyqmvIdNVubjENkJPoLwykxGHPHDjNLCTFX-3DdwHDb5dNkF9U0NklPvkNLUp6EJ6_W5n1WO7jgAa8OjpBf7M5WdfSgt0Kdt1YDFO6vkv7y7kHzDHc7K5t7ETiXr6XAkDEDDlWDW_m04Xv9VgnyOFjf3FDItz8IuX7sVWCzuCpsvLOng2TZQrCV_IqS2tX09aUNBXeX60tk0MEpcCzeEMAhf1CTe2ejN05M"></script><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260803-03-c990d82","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,0","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHO2EIdDP0,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YADy3sAhvXQ,0","Oleo Script":"YACgEQQ14jI,0","Playfair Display":"YAFdJhem5V8,1","Poppins":"YAE5fPSY9qM,0","Press Start 2P":"YAFyGr-8pmQ,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/7949ff62d67710d5.telemetry_sdk.js" integrity="sha512-KIvXA82Di44YY/RH9/63A9MuTuavYgDFG8PfErJn7Wli4K0LAOk+coo/aPXk3+ZNL96nHh9VYD4PE+fLes+laQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Cormorant+Garamond:wght@300;400;600&amp;display=swap" rel="stylesheet">
+  <style>
+        body { font-family: 'Playfair Display', serif; }
+        .envelope-wrapper { perspective: 1200px; }
+        .envelope {
+            width: 340px; height: 240px;
+            background: #f5e6c8;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 0 30px rgba(0,0,0,0.05);
+            transform: rotateX(5deg);
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease, box-shadow 0.8s ease;
+        }
+        .envelope::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 50%;
+            background: linear-gradient(135deg, #f0ddb8 0%, #e8d1a8 100%);
+            clip-path: polygon(0 0, 50% 80%, 100% 0);
+            border-radius: 8px 8px 0 0;
+            z-index: 2;
+            transition: clip-path 0.6s ease, transform 0.6s ease;
+            transform-origin: top center;
+        }
+        .envelope.opened::before {
+            transform: rotateX(180deg);
+            opacity: 0;
+        }
+        .envelope.opened {
+            transform: rotateX(0deg) scale(0.9);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .wax-seal {
+            width: 64px; height: 64px;
+            background: radial-gradient(circle at 35% 35%, #d4a017, #8b6914 70%);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) translateZ(10px);
+            z-index: 10;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4), inset 0 -2px 5px rgba(0,0,0,0.3), inset 0 2px 5px rgba(255,215,0,0.3);
+            display: flex; align-items: center; justify-content: center;
+            transition: transform 0.3s ease, opacity 0.5s ease;
+        }
+        .wax-seal:hover { transform: translate(-50%, -50%) translateZ(10px) scale(1.1); }
+        .wax-seal.hidden { opacity: 0; pointer-events: none; }
+        .wax-seal-letter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px; font-weight: 600;
+            color: #f5e6c8;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .card-container {
+            position: absolute; inset: 20px;
+            display: none;
+            align-items: center; justify-content: center;
+            z-index: 5;
+        }
+        .card-container.visible { display: flex; }
+        .scratch-area {
+            position: relative;
+            width: 280px; height: 160px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .reveal-content {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #fffef5, #fdf6e3);
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .reveal-content .date {
+            font-size: 28px; font-weight: 600;
+            color: #8b6914;
+        }
+        .reveal-content .label {
+            font-size: 14px; color: #a08050;
+            margin-top: 4px; letter-spacing: 2px; text-transform: uppercase;
+        }
+        #scratchCanvas {
+            position: absolute; inset: 0;
+            cursor: crosshair;
+            border-radius: 12px;
+        }
+        #confettiCanvas {
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 1000;
+        }
+        .hint-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px; color: #b89a5a;
+            margin-top: 12px; opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .hint-text.visible { opacity: 1; }
+    </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/0e8d3a91e1c6f495.data_sdk.js" type="text/javascript" integrity="sha512-c00oDoGjsMgluCLLEyVl3suwEkgjOGGplVFbsilUoBg4aMKNmsL3mwsc9r0dPn95qiSZyjBousQXgROkAW7p/w=="></script>
+  <script src="/_sdk/0861142411a705b3.resizing_sdk.js" type="text/javascript" integrity="sha512-X0bLjaYj1Xt+fgqHIQTnngXBdDu6ba0g9OkC2AJGmKo8tGdT7I9t7nHNyXupUMHk4uOTomIlcija41NaartwJQ=="></script>
+ </head>
+ <body data-template-id="__page-root" class="min-h-screen flex items-center justify-center" style="background: radial-gradient(rgb(44, 36, 24) 0%, rgb(26, 16, 8) 100%);">
+  <main class="flex flex-col items-center">
+   <h1 data-template-id="heading" class="canva-text text-center mb-8 text-2xl" style="color: rgb(212, 160, 23); font-weight: 700; font-style: normal; font-size: 32px;">You're Invited</h1>
+   <div class="envelope-wrapper">
+    <div class="envelope" id="envelope">
+     <div class="wax-seal" id="waxSeal" role="button" aria-label="Open envelope"><span class="wax-seal-letter">♥</span>
+     </div>
+     <div class="card-container" id="cardContainer">
+      <div class="scratch-area">
+       <div class="reveal-content">
+        <div class="label">
+         Save the Date
+        </div>
+        <div class="date">
+         January 27, 2027
+        </div>
+        <div class="label">
+         We're getting married!
+        </div>
+       </div>
+       <canvas id="scratchCanvas"></canvas>
+      </div>
+     </div>
+    </div>
+   </div>
+   <p class="hint-text" id="hintText">Scratch to reveal our special date ✨</p>
+   <p data-template-id="footer-text" class="canva-text mt-10 text-sm opacity-70 text-center" style="color: rgb(201, 168, 76); font-weight: 300; font-style: normal; font-size: 16px;">With love &amp; joy, we request the honor of your presence</p>
+  </main>
+  <canvas id="confettiCanvas"></canvas>
+  <script src="/_sdk/c229d146679821d6.editing_sdk.js" integrity="sha512-umX8A9h8eJWRPB7xE7gh7Ngl1Y7fHpiaFvRwc6mxacvabfaLB/fImp68nlFMPDFjFbXCyl4OWAaW63aecWWnEA=="></script>
+  <script>
+        const envelope = document.getElementById('envelope');
+        const waxSeal = document.getElementById('waxSeal');
+        const cardContainer = document.getElementById('cardContainer');
+        const hintText = document.getElementById('hintText');
+        const scratchCanvas = document.getElementById('scratchCanvas');
+        const confettiCanvas = document.getElementById('confettiCanvas');
+        const ctx = scratchCanvas.getContext('2d');
+        const cCtx = confettiCanvas.getContext('2d');
+        let isDrawing = false;
+        let confettiFired = false;
+
+        waxSeal.addEventListener('click', () => {
+            waxSeal.classList.add('hidden');
+            envelope.classList.add('opened');
+            setTimeout(() => {
+                cardContainer.classList.add('visible');
+                hintText.classList.add('visible');
+                initScratch();
+            }, 700);
+        });
+
+        function initScratch() {
+            scratchCanvas.width = 280;
+            scratchCanvas.height = 160;
+            // Gold scratch layer
+            const grad = ctx.createLinearGradient(0, 0, 280, 160);
+            grad.addColorStop(0, '#c9a84c');
+            grad.addColorStop(0.5, '#e0c068');
+            grad.addColorStop(1, '#a07828');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, 280, 160);
+            ctx.fillStyle = 'rgba(0,0,0,0.08)';
+            for (let i = 0; i < 200; i++) {
+                ctx.fillRect(Math.random()*280, Math.random()*160, 2, 1);
+            }
+            ctx.font = '14px "Cormorant Garamond", serif';
+            ctx.fillStyle = '#8b6914';
+            ctx.textAlign = 'center';
+            ctx.fillText('✦ Scratch here ✦', 140, 85);
+            ctx.globalCompositeOperation = 'destination-out';
+        }
+
+        function scratch(x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, Math.PI * 2);
+            ctx.fill();
+            checkProgress();
+        }
+
+        function checkProgress() {
+            if (confettiFired) return;
+            const data = ctx.getImageData(0, 0, 280, 160).data;
+            let cleared = 0;
+            for (let i = 3; i < data.length; i += 16) {
+                if (data[i] === 0) cleared++;
+            }
+            const total = (280 * 160) / 4;
+            if (cleared / total > 0.55) {
+                confettiFired = true;
+                ctx.clearRect(0, 0, 280, 160);
+                fireConfetti();
+            }
+        }
+
+        function getPos(e) {
+            const r = scratchCanvas.getBoundingClientRect();
+            const t = e.touches ? e.touches[0] : e;
+            return { x: t.clientX - r.left, y: t.clientY - r.top };
+        }
+
+        scratchCanvas.addEventListener('mousedown', (e) => { isDrawing = true; scratch(getPos(e).x, getPos(e).y); });
+        scratchCanvas.addEventListener('mousemove', (e) => { if (isDrawing) scratch(getPos(e).x, getPos(e).y); });
+        scratchCanvas.addEventListener('mouseup', () => isDrawing = false);
+        scratchCanvas.addEventListener('mouseleave', () => isDrawing = false);
+        scratchCanvas.addEventListener('touchstart', (e) => { e.preventDefault(); isDrawing = true; scratch(getPos(e).x, getPos(e).y); });
+        scratchCanvas.addEventListener('touchmove', (e) => { e.preventDefault(); if (isDrawing) scratch(getPos(e).x, getPos(e).y); });
+        scratchCanvas.addEventListener('touchend', () => isDrawing = false);
+
+        // Confetti
+        function fireConfetti() {
+            confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+            const pieces = [];
+            const colors = ['#d4a017','#f5e6c8','#e0c068','#ff6b8a','#ffd700','#ff4500','#8b6914','#fff'];
+            for (let i = 0; i < 150; i++) {
+                pieces.push({
+                    x: Math.random() * confettiCanvas.width,
+                    y: -20 - Math.random() * 200,
+                    w: 6 + Math.random() * 6,
+                    h: 4 + Math.random() * 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    vx: (Math.random() - 0.5) * 4,
+                    vy: 2 + Math.random() * 4,
+                    rot: Math.random() * 360,
+                    rv: (Math.random() - 0.5) * 10
+                });
+            }
+            let frames = 0;
+            function draw() {
+                cCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+                pieces.forEach(p => {
+                    p.x += p.vx; p.y += p.vy; p.rot += p.rv; p.vy += 0.1;
+                    cCtx.save();
+                    cCtx.translate(p.x, p.y);
+                    cCtx.rotate(p.rot * Math.PI / 180);
+                    cCtx.fillStyle = p.color;
+                    cCtx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+                    cCtx.restore();
+                });
+                frames++;
+                if (frames < 180) requestAnimationFrame(draw);
+            }
+            draw();
+        }
+    </script>
+ 
+</body></html>
