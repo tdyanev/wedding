@@ -1,60 +1,470 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#627b91">
-<title>Marlyn & Tihomir — Wedding Invitation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Italiana&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#24313a;--blue:#718da2;--blue2:#9fb4c2;--ivory:#fbf7ef;--paper:#fffdf8;--gold:#b9975b;--taupe:#b8aa9c;--line:rgba(55,70,80,.16);--shadow:0 24px 80px rgba(23,36,47,.16)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--ivory);font-family:Montserrat,sans-serif;overflow-x:hidden}body.date-locked{overflow:hidden}.site-content{display:none}.site-content.unlocked{display:block;animation:siteReveal .9s ease both}@keyframes siteReveal{from{opacity:0}to{opacity:1}}h1,h2,h3,p{margin-top:0}h1,h2,h3,.serif{font-family:Italiana,'Cormorant Garamond',serif;font-weight:400}.script{font-family:'Cormorant Garamond',serif;font-style:italic}.eyebrow{letter-spacing:.24em;text-transform:uppercase;font-size:.72rem;color:var(--gold)}.section{padding:100px 22px;position:relative}.wrap{width:min(1120px,100%);margin:auto}.narrow{width:min(760px,100%);margin:auto}.center{text-align:center}.divider{width:90px;height:1px;background:var(--gold);margin:24px auto}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;border:1px solid var(--gold);padding:14px 23px;border-radius:999px;color:var(--ink);background:rgba(255,255,255,.65);text-decoration:none;cursor:pointer;font:500 .76rem Montserrat;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,51,60,.13);background:#fff}.blue{background:linear-gradient(145deg,#667f94,#90a7b8);color:white}.paper{background:linear-gradient(145deg,#fffdf8,#f2eadf)}
-/* opening */
-#opening{min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 20% 15%,rgba(255,255,255,.26),transparent 30%),linear-gradient(145deg,#52697b,#829bad 58%,#b7c4cc);color:white;overflow:hidden}.particles{position:absolute;inset:0;background-image:radial-gradient(circle,#e9d9ac 1px,transparent 1.5px);background-size:48px 48px;opacity:.28;animation:drift 16s linear infinite}@keyframes drift{to{background-position:80px 120px}}.intro{text-align:center;z-index:2}.monogram{font:400 clamp(4rem,12vw,8rem) Italiana;letter-spacing:.08em;text-shadow:0 12px 40px rgba(0,0,0,.14)}.intro p{letter-spacing:.38em;text-transform:uppercase;font-size:.75rem}.envelope-stage{margin:50px auto 18px;perspective:1400px}.envelope{width:min(520px,86vw);height:min(340px,56vw);max-height:340px;position:relative;background:linear-gradient(145deg,#e9dfcf,#fffaf0);border-radius:8px;box-shadow:0 35px 90px rgba(29,38,46,.38);transform-style:preserve-3d;transition:1s}.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,#f8efe2,#ddd0bd);clip-path:polygon(0 0,50% 64%,100% 0);transform-origin:top;z-index:3;transition:1s}.envelope:after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,#f4ebdd,#e4d7c6);clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);z-index:2}.envelope.open{transform:translateY(55px)}.envelope.open:before{transform:rotateX(180deg);z-index:0}.seal{position:absolute;z-index:7;left:50%;top:52%;transform:translate(-50%,-50%);width:82px;height:82px;border:0;border-radius:50%;background:radial-gradient(circle at 32% 28%,#9eb7ca,#587287 70%);color:#f8ecd0;font:2rem Italiana;box-shadow:0 10px 30px rgba(28,42,53,.3),inset 0 0 0 4px rgba(255,255,255,.12);cursor:pointer;transition:.4s}.seal:hover{transform:translate(-50%,-50%) scale(1.08)}.seal::after{content:"Click me";position:absolute;left:50%;bottom:calc(100% + 12px);transform:translateX(-50%) translateY(5px);padding:7px 11px;border-radius:7px;background:#263744;color:#fffdf7;font:600 11px Montserrat;letter-spacing:.04em;white-space:nowrap;opacity:0;pointer-events:none;transition:.22s;box-shadow:0 8px 22px rgba(20,31,40,.24)}.seal::before{content:"";position:absolute;left:50%;bottom:calc(100% + 5px);transform:translateX(-50%) translateY(5px);border:7px solid transparent;border-top-color:#263744;opacity:0;pointer-events:none;transition:.22s}.seal:hover::after,.seal:hover::before,.seal:focus-visible::after,.seal:focus-visible::before{opacity:1;transform:translateX(-50%) translateY(0)}.envelope.open .seal{opacity:0;pointer-events:none}.invite-card{position:absolute;z-index:5;left:6%;right:6%;bottom:5%;height:88%;background:#fffdf7;border:1px solid rgba(185,151,91,.3);box-shadow:0 10px 28px rgba(50,40,25,.14);padding:22px;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(48%) scale(.96);transition:transform 1.05s cubic-bezier(.2,.8,.2,1),opacity .35s ease,visibility 0s linear 1.05s}.envelope.card-ready .invite-card{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(-78%) scale(1);z-index:10;transition-delay:0s}.scratch{position:relative;width:100%;height:100%;overflow:hidden;display:grid;place-items:center;text-align:center}.save-date{font:clamp(1.7rem,5vw,3rem) Italiana;color:#657e92}.save-date small{display:block;font:500 .68rem Montserrat;letter-spacing:.18em;text-transform:uppercase;color:#b9975b;margin:7px}#scratchCanvas{position:absolute;z-index:12;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}.opening-actions{opacity:0;pointer-events:none;transition:.8s;margin-top:28px}.opening-actions.show{opacity:1;pointer-events:auto}
-/* hero */
-.hero{min-height:100vh;display:grid;align-items:end;padding-bottom:90px;background:linear-gradient(to top,rgba(20,31,39,.82),rgba(20,31,39,.05)),radial-gradient(circle at 70% 20%,#d1ab7d 0 6%,transparent 22%),linear-gradient(165deg,#8ca0a5 0 32%,#607b7d 33% 53%,#314d55 54%);color:#fff}.hero h1{font-size:clamp(3.1rem,8vw,7rem);line-height:.94;max-width:900px}.hero p{max-width:640px;font:1.45rem/1.65 'Cormorant Garamond';color:#f4efe7}.hero .btn{color:white;border-color:#e2c990;background:rgba(0,0,0,.15)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.portrait,.cinema{min-height:560px;border-radius:3px;box-shadow:var(--shadow);background:linear-gradient(160deg,#cad4d8,#8096a2 48%,#4d6571);position:relative;overflow:hidden}.portrait:after,.cinema:after{content:"Photo placeholder";position:absolute;inset:auto 0 24px;text-align:center;color:white;letter-spacing:.18em;text-transform:uppercase;font-size:.7rem}.profile h2{font-size:clamp(3rem,6vw,5.5rem);margin-bottom:8px}.profile p{font:1.28rem/1.7 'Cormorant Garamond';color:#4b5961}.parents{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;margin-top:35px;padding-top:24px;border-top:1px solid var(--line)}.parents strong{font-family:'Cormorant Garamond';font-size:1.15rem}.heart{color:var(--gold)}
-/* gallery */
-.gallery{background:#263942;color:#fff}.gallery h2{font-size:clamp(3.2rem,7vw,6rem)}.chapters{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px 4vw 35px}.chapter{min-width:min(860px,86vw);scroll-snap-align:center;background:#f8f4ed;color:var(--ink);padding:24px;box-shadow:0 25px 70px rgba(0,0,0,.26)}.chapter h3{font-size:2.2rem}.photo-grid{display:grid;grid-template-columns:1.3fr .7fr;grid-template-rows:230px 230px;gap:14px}.photo{background:linear-gradient(145deg,#bfcbd0,#657d8b);display:grid;place-items:center;color:white;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}.photo:first-child{grid-row:span 2}.quote-banner{min-height:70vh;display:grid;place-items:center;text-align:center;background:linear-gradient(rgba(35,48,56,.55),rgba(35,48,56,.68)),linear-gradient(145deg,#8ca0a8,#516a73);color:white}.quote-banner h2{font-size:clamp(3rem,8vw,7rem);max-width:1000px}
-/* celebration */
-.title-lg{font-size:clamp(3rem,7vw,6rem)}.venue{display:grid;grid-template-columns:1.2fr .8fr;background:white;box-shadow:var(--shadow)}.venue-image{min-height:520px;background:linear-gradient(155deg,#c6d0d0,#7b9099 50%,#4e6871);display:grid;place-items:end center;color:#fff;padding:22px;text-transform:uppercase;letter-spacing:.15em;font-size:.7rem}.venue-copy{padding:55px}.venue-copy h3{font-size:2.8rem}.venue-copy p{line-height:1.75;color:#526069}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.highlights{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.pill{padding:9px 13px;background:#eef2f3;border-radius:999px;font-size:.78rem}.names{columns:2;column-gap:50px}.role{break-inside:avoid;margin-bottom:30px}.role h3{font:500 .7rem Montserrat;color:var(--gold);letter-spacing:.2em;text-transform:uppercase}.role p{font:1.3rem/1.65 'Cormorant Garamond';margin-bottom:0}.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0}.swatch{height:140px;border-radius:2px;display:flex;align-items:end;padding:12px;color:#24313a;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}.gift-details{max-height:0;overflow:hidden;transition:.6s}.gift-details.open{max-height:500px;margin-top:24px}.countdown{min-height:80vh;display:grid;place-items:center;color:white;background:linear-gradient(rgba(36,50,58,.42),rgba(36,50,58,.68)),linear-gradient(145deg,#c1b09e,#70848c 52%,#304c55)}.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:35px auto;max-width:760px}.timebox{padding:28px 12px;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(5px)}.timebox b{display:block;font:clamp(2rem,6vw,4rem) Italiana}.timebox span{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase}
-/* FAQ/RSVP */
-.faq{max-width:850px;margin:auto}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;border:0;background:none;text-align:left;padding:24px 4px;font:1.35rem 'Cormorant Garamond';cursor:pointer;display:flex;justify-content:space-between}.faq-a{max-height:0;overflow:hidden;transition:.45s;color:#59676e;line-height:1.7}.faq-item.open .faq-a{max-height:400px;padding-bottom:24px}.rsvp{background:linear-gradient(145deg,#627b91,#9cb0bd);color:white}.form{max-width:720px;margin:auto;background:rgba(255,255,255,.94);color:var(--ink);padding:clamp(26px,5vw,55px);box-shadow:var(--shadow)}label{display:block;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;margin:20px 0 8px}input,textarea{width:100%;padding:14px;border:0;border-bottom:1px solid #bfc5c8;background:transparent;font:1rem Montserrat;outline:none}textarea{min-height:115px;resize:vertical}.radio{display:flex;gap:15px;align-items:flex-start;margin:12px 0}.radio input{width:auto}.submit{width:100%;margin-top:25px;background:var(--blue);color:#fff;border-color:var(--blue)}.farewell{min-height:92vh;display:grid;place-items:center;background:linear-gradient(rgba(40,49,52,.35),rgba(40,49,52,.7)),linear-gradient(160deg,#d6ad7c,#7e9296 48%,#334c55);color:white;text-align:center}.farewell h2{font-size:clamp(3rem,9vw,7rem)}footer{padding:28px;text-align:center;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}.reveal{opacity:0;transform:translateY(25px);transition:.8s}.reveal.visible{opacity:1;transform:none}
-@media(max-width:760px){.section{padding:72px 18px}.grid2,.venue{grid-template-columns:1fr}.portrait{min-height:430px}.grid2 .portrait{order:-1}.venue-image{min-height:360px}.venue-copy{padding:32px 24px}.parents{grid-template-columns:1fr;text-align:center}.heart{order:2}.photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:210px 180px}.photo:first-child{grid-column:span 2;grid-row:auto}.names{columns:1}.swatches{grid-template-columns:1fr 1fr}.timer{grid-template-columns:1fr 1fr}.envelope-stage{margin-top:35px}.intro{padding:30px 0}.envelope.card-ready .invite-card{transform:translateY(-70%) scale(1)}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#d9a8b6">
+  <title>Marlyn & Tihomir — Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="date-locked">
-<section id="opening">
-<div class="particles"></div><div class="intro"><div class="eyebrow" style="color:#f1dcaa">From different maps, one destination</div><div class="monogram">M ♥ T</div><p>January 2027</p>
-<div class="envelope-stage"><div class="envelope" id="envelope"><div class="invite-card"><div class="scratch"><div class="save-date"><small>Save the date</small>Wednesday<br>January 27, 2027<small>3:00 PM · Daraga, Albay</small></div><canvas id="scratchCanvas"></canvas></div></div><button class="seal" id="seal" aria-label="Open invitation" title="Click me">M♥T</button></div></div>
-<div class="opening-actions" id="openingActions"><p style="letter-spacing:.08em">The date is revealed ✨</p><a class="btn" href="#story">Continue our story ↓</a></div></div></section><main id="siteContent" class="site-content" aria-hidden="true">
-<section id="story" class="hero section"><div class="wrap"><div class="eyebrow">Marlyn & Tihomir</div><h1>From Different Maps,<br>One Destination</h1><p>Every love story begins somewhere. Ours began on opposite sides of the world—different countries, cultures, and languages. Yet somehow, every road led us to each other.</p><a class="btn" href="#bride">Begin our journey</a></div></section>
-<section id="bride" class="section paper"><div class="wrap grid2 reveal"><div class="portrait"></div><div class="profile"><div class="eyebrow">Meet the bride</div><h2>Marlyn N. Napili</h2><p class="eyebrow" style="color:#718da2">Sixth of seven siblings</p><p>I am the sixth of seven siblings, raised in a home where faith, respect, and family were always at the center of everything. Every lesson, sacrifice, and value my parents shared helped shape the woman I am today.</p><div class="parents"><div><strong>Catalino Pererras Napili</strong><br><small>Father</small></div><div class="heart">♡</div><div><strong>Marcy Nidea Napili</strong><br><small>Mother</small></div></div></div></div></section>
-<section class="section"><div class="wrap grid2 reveal"><div class="profile"><div class="eyebrow">Meet the groom</div><h2>Tihomir Yanev</h2><p class="eyebrow" style="color:#718da2">Eldest of two siblings</p><p>Tihomir was raised in Bulgaria by a loving and supportive family. Growing up as the older brother taught him responsibility, patience, and care. His quiet strength, kindness, and unwavering support are some of the many reasons I fell in love with him.</p><div class="parents"><div><strong>Dimitar Yanev</strong><br><small>Father</small></div><div class="heart">♡</div><div><strong>Maya Yaneva</strong><br><small>Mother</small></div></div></div><div class="portrait"></div></div></section>
-<section class="section gallery"><div class="center"><div class="eyebrow">The moments between</div><h2>Our Story in Chapters</h2><p>Swipe or scroll sideways through the memories.</p></div><div class="chapters"><article class="chapter"><h3>01 · Our First Meeting</h3><div class="photo-grid"><div class="photo">First selfie</div><div class="photo">First date</div><div class="photo">A moment to remember</div></div></article><article class="chapter"><h3>02 · Long Distance</h3><div class="photo-grid"><div class="photo">Video calls</div><div class="photo">Random selfies</div><div class="photo">Across the miles</div></div></article><article class="chapter"><h3>03 · Adventures Together</h3><div class="photo-grid"><div class="photo">Switzerland · Germany</div><div class="photo">Bulgaria</div><div class="photo">Philippines · Road trips</div></div></article></div></section>
-<section class="quote-banner section"><div class="narrow reveal"><h2>Different Maps.<br>Different Cultures.<br>One Family.</h2><div class="divider"></div><p class="script" style="font-size:1.45rem">On January 27, 2027, our families and loved ones will gather in one place as we begin our greatest adventure yet.</p></div></section>
-<section class="section paper"><div class="narrow center reveal"><div class="eyebrow">Act III</div><h2 class="title-lg">The Celebration</h2><p class="script" style="font-size:1.5rem">The greatest gift is having the people we love gathered in one place as we begin our forever.</p><div class="divider"></div></div><div class="wrap venue reveal"><div class="venue-image">Daraga Church image</div><div class="venue-copy"><div class="eyebrow">Wedding ceremony</div><h3>Where We Will Say “I Do”</h3><p><strong>Daraga Church – Our Lady of the Gate Parish</strong><br>Daraga, Albay, Philippines</p><p><strong>3:00 PM</strong><br>Please arrive 30 minutes early for parking and seating.</p><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Our+Lady+of+the+Gate+Parish+Daraga+Albay">View map</a><a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=Our+Lady+of+the+Gate+Parish+Daraga+Albay">Get directions</a></div></div></div></section>
-<section class="section"><div class="wrap venue reveal"><div class="venue-copy"><div class="eyebrow">Reception</div><h3>Where We’ll Celebrate Together</h3><p><strong>New Blossoms Events Place</strong><br>Tagas, Daraga, Albay, Philippines</p><p>Immediately following the ceremony.</p><div class="highlights"><span class="pill">✨ Dinner</span><span class="pill">🥂 Toasts</span><span class="pill">🎤 Speeches</span><span class="pill">💃 First Dance</span><span class="pill">🎉 Celebration</span></div><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=New+Blossoms+Events+Place+Tagas+Daraga+Albay">View map</a><a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=New+Blossoms+Events+Place+Tagas+Daraga+Albay">Get directions</a></div></div><div class="venue-image">Reception image</div></div></section>
-<section class="section paper"><div class="wrap reveal"><div class="center narrow"><div class="eyebrow">Those beside us</div><h2 class="title-lg">Our Wedding Party</h2><p>A wedding is made even more meaningful by the people who stand beside us. We are deeply grateful for their love, guidance, friendship, and support.</p><div class="divider"></div></div><div class="names"><div class="role"><h3>Principal Sponsors</h3><p>Engr. Leo Angelo J. Francisco<br>Mrs. Jackie Lenn B. Francisco<br>Engr. Rolando M. Dacillo<br>Engr. Marites E. Olesco<br>Engr. Remigio R. Angeles Jr.<br>Mrs. Myrna B. Nipa<br>Mr. Eufracio R. Tolentino<br>Mrs. Imelda S. Tolentino</p></div><div class="role"><h3>Maid of Honor</h3><p>Ellavil N. Napili</p></div><div class="role"><h3>To Light Our Path</h3><p>Cynthia O. Matutina</p></div><div class="role"><h3>To Clothe Us Together</h3><p>Rowena Nabor</p></div><div class="role"><h3>To Bind Us as One</h3><p>Charleen M. Nacion</p></div><div class="role"><h3>Bridesmaids</h3><p>Joan D. Misolania<br>Clariza N. Napod</p></div><div class="role"><h3>Ring, Bible & Coin Bearers</h3><p>Charles Vimto S. Napile<br>Names to follow</p></div></div></div></section>
-<section class="section"><div class="wrap grid2 reveal"><div><div class="eyebrow">Dress to celebrate</div><h2 class="title-lg">Dress Code</h2><p class="script" style="font-size:1.45rem">Semi-formal or polished casual attire inspired by our muted, timeless wedding palette.</p><p>We warmly encourage elegant neutral shades. Kindly avoid white or bridal ivory, neon colors, very bold prints, shorts, athletic wear, and overly casual footwear.</p></div><div><div class="swatches"><div class="swatch" style="background:#f3eee4">Soft ivory</div><div class="swatch" style="background:#d9c397">Champagne</div><div class="swatch" style="background:#91aabd">Dusty blue</div><div class="swatch" style="background:#b9afa2">Taupe</div></div><p><strong>Principal Sponsors:</strong> soft ivory, champagne, light taupe.<br><strong>Guests:</strong> dusty blue, light gray, taupe, beige.</p></div></div></section>
-<section class="section paper"><div class="narrow center reveal"><div class="eyebrow">A gift from the heart</div><h2 class="title-lg">Wedding Gift</h2><p>Your love, prayers, and presence are the greatest gifts we could ask for. As we begin our married life in Europe, a monetary gift toward our first home would be received with sincere gratitude.</p><button class="btn" id="giftBtn">🎁 View gift details</button><div class="gift-details" id="giftDetails"><p><strong>Bank Transfer</strong><br>Account Name: To be added<br>Bank Name: To be added<br>Account Number: To be added</p><p><strong>GCash</strong><br>Mobile Number: To be added<br>QR code: To be added</p></div><div class="divider"></div><p class="script" style="font-size:1.35rem">With love,<br>Marlyn & Tihomir ❤️</p></div></section>
-<section class="countdown section"><div class="center wrap reveal"><p class="script" style="font-size:1.6rem">Every sunrise brings us one day closer...</p><h2 class="title-lg">Until We Say “I Do”</h2><div class="timer"><div class="timebox"><b id="days">0</b><span>Days</span></div><div class="timebox"><b id="hours">0</b><span>Hours</span></div><div class="timebox"><b id="minutes">0</b><span>Minutes</span></div><div class="timebox"><b id="seconds">0</b><span>Seconds</span></div></div><p>January 27, 2027 · 3:00 PM</p><a class="btn" href="#faq" style="color:white">Continue to RSVP</a></div></section>
-<section id="faq" class="section paper"><div class="center narrow"><div class="eyebrow">Before the big day</div><h2 class="title-lg">Frequently Asked Questions</h2><div class="divider"></div></div><div class="faq reveal"><div class="faq-item"><button class="faq-q">Can I bring my children?<span>＋</span></button><div class="faq-a">Due to venue limitations, our wedding will be an adults-only celebration, except for immediate family. We adore your little ones and sincerely appreciate your understanding.</div></div><div class="faq-item"><button class="faq-q">Can I bring a date or plus one?<span>＋</span></button><div class="faq-a">To keep our celebration intimate, we kindly ask that only named guests attend. Principal Sponsors may be accompanied by their spouse or partner.</div></div><div class="faq-item"><button class="faq-q">Can I take photos during the ceremony?<span>＋</span></button><div class="faq-a">Absolutely. Please remain mindful of our photographers and videographers, keep the aisle clear, and avoid blocking their view.</div></div><div class="faq-item"><button class="faq-q">Can I share reception photos online?<span>＋</span></button><div class="faq-a">Yes—we would love to see the celebration through your eyes. Our official wedding hashtag will be added here soon.</div></div></div></section>
-<section class="section rsvp"><div class="center narrow"><div class="eyebrow" style="color:#f0d99f">Act V</div><h2 class="title-lg">Will You Celebrate With Us?</h2><p class="script" style="font-size:1.5rem">Whether you are traveling from across the world or just across town, your presence would mean the world to us.</p></div><form class="form reveal" id="rsvpForm"><label for="name">Full name</label><input id="name" required placeholder="Enter your full name"><label>Will you be joining us?</label><label class="radio"><input type="radio" name="attendance" value="yes" required> With joy, I’ll be there! 🎉</label><label class="radio"><input type="radio" name="attendance" value="no"> Regretfully, I won’t be able to attend.</label><label for="message">Leave us a message</label><textarea id="message" placeholder="Share your wishes, prayers, advice, or a message for us."></textarea><button class="btn submit" type="submit">❤️ Send RSVP</button><p id="rsvpStatus" class="center" style="margin-top:18px"></p></form></section>
-<section class="farewell section"><div class="narrow reveal"><div class="monogram" style="font-size:clamp(4rem,12vw,8rem)">M ♥ T</div><h2>Our Greatest Adventure Begins.</h2><p class="script" style="font-size:1.55rem">Every love story begins with a single moment.<br>Ours began with one swipe.<br><br>See you on January 27, 2027.</p></div></section><footer>Marlyn & Tihomir · Daraga, Albay · 2027</footer></main><canvas id="confetti" style="position:fixed;inset:0;pointer-events:none;z-index:999"></canvas>
-<script>
-const envelope=document.querySelector('#envelope'),seal=document.querySelector('#seal'),scratchCanvas=document.querySelector('#scratchCanvas'),sctx=scratchCanvas.getContext('2d'),openingActions=document.querySelector('#openingActions'),siteContent=document.querySelector('#siteContent');let drawing=false,done=false,scratchReady=false;
-seal.onclick=()=>{if(envelope.classList.contains('open'))return;envelope.classList.add('open');setTimeout(()=>{envelope.classList.add('card-ready')},620);setTimeout(()=>{initScratch();scratchReady=true},760)};
-function initScratch(){const r=scratchCanvas.getBoundingClientRect(),d=devicePixelRatio||1;scratchCanvas.width=r.width*d;scratchCanvas.height=r.height*d;sctx.scale(d,d);const g=sctx.createLinearGradient(0,0,r.width,r.height);g.addColorStop(0,'#8f713d');g.addColorStop(.45,'#d8bd7a');g.addColorStop(1,'#9c7b42');sctx.fillStyle=g;sctx.fillRect(0,0,r.width,r.height);sctx.fillStyle='rgba(255,255,255,.75)';sctx.font='600 18px Montserrat';sctx.textAlign='center';sctx.fillText('SCRATCH TO REVEAL',r.width/2,r.height/2);sctx.globalCompositeOperation='destination-out'}
-function pos(e){const r=scratchCanvas.getBoundingClientRect(),p=e.touches?e.touches[0]:e;return{x:p.clientX-r.left,y:p.clientY-r.top}}function scratch(e){if(!drawing||!scratchReady)return;const p=pos(e);sctx.beginPath();sctx.arc(p.x,p.y,34,0,Math.PI*2);sctx.fill();check()}function check(){if(done)return;const data=sctx.getImageData(0,0,scratchCanvas.width,scratchCanvas.height).data;let clear=0,samples=0;for(let i=3;i<data.length;i+=40){samples++;if(data[i]===0)clear++}if(clear/samples>=.50){done=true;sctx.clearRect(0,0,scratchCanvas.width,scratchCanvas.height);scratchCanvas.style.pointerEvents='none';openingActions.classList.add('show');siteContent.classList.add('unlocked');siteContent.setAttribute('aria-hidden','false');document.body.classList.remove('date-locked');confetti()}}
-['mousedown','touchstart'].forEach(x=>scratchCanvas.addEventListener(x,e=>{e.preventDefault();drawing=true;scratch(e)},{passive:false}));['mousemove','touchmove'].forEach(x=>scratchCanvas.addEventListener(x,e=>{e.preventDefault();scratch(e)},{passive:false}));['mouseup','mouseleave','touchend'].forEach(x=>scratchCanvas.addEventListener(x,()=>drawing=false));
-openingActions.querySelector('a').addEventListener('click',e=>{e.preventDefault();document.querySelector('#story').scrollIntoView({behavior:'smooth'})});
-document.querySelector('#giftBtn').onclick=()=>document.querySelector('#giftDetails').classList.toggle('open');document.querySelectorAll('.faq-q').forEach(q=>q.onclick=()=>{const item=q.parentElement;document.querySelectorAll('.faq-item').forEach(i=>i!==item&&i.classList.remove('open'));item.classList.toggle('open');q.querySelector('span').textContent=item.classList.contains('open')?'−':'＋'});
-function tick(){const target=new Date('2027-01-27T15:00:00+08:00'),n=new Date(),d=Math.max(0,target-n);days.textContent=Math.floor(d/86400000);hours.textContent=Math.floor(d/3600000)%24;minutes.textContent=Math.floor(d/60000)%60;seconds.textContent=Math.floor(d/1000)%60}tick();setInterval(tick,1000);
-const obs=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.13});document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
-document.querySelector('#rsvpForm').onsubmit=e=>{e.preventDefault();const attending=new FormData(e.target).get('attendance')==='yes';rsvpStatus.textContent=attending?'Thank you for saying yes! We cannot wait to celebrate with you. ❤️':'Thank you for your love and warm wishes. We will miss you on the day. ❤️';confetti()};
-function confetti(){const c=document.querySelector('#confetti'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;const cs=['#718da2','#f5e8c7','#b9975b','#ffffff','#9fb4c2'],p=Array.from({length:130},()=>({x:Math.random()*c.width,y:-30-Math.random()*c.height*.5,vx:(Math.random()-.5)*3,vy:2+Math.random()*4,s:4+Math.random()*6,r:Math.random()*6.28,vr:(Math.random()-.5)*.2,col:cs[Math.floor(Math.random()*cs.length)]}));let f=0;(function draw(){x.clearRect(0,0,c.width,c.height);p.forEach(a=>{a.x+=a.vx;a.y+=a.vy;a.vy+=.035;a.r+=a.vr;x.save();x.translate(a.x,a.y);x.rotate(a.r);x.fillStyle=a.col;x.fillRect(-a.s/2,-a.s/2,a.s,a.s*.65);x.restore()});if(f++<240)requestAnimationFrame(draw)})()}
-</script>
-</body></html>
+  <section id="opening" class="opening">
+    <div class="mayon-scene" aria-hidden="true"></div>
+
+    <div class="opening-copy">
+      <div class="eyebrow eyebrow-light">From different maps, one destination</div>
+      <div class="opening-monogram">M ♥ T</div>
+      <p class="opening-month">January 2027</p>
+    </div>
+
+    <div class="envelope-screen" id="envelope" aria-label="Wedding envelope">
+      <div class="flap flap-top"></div>
+      <div class="flap flap-right"></div>
+      <div class="flap flap-bottom"></div>
+      <div class="flap flap-left"></div>
+
+      <button class="seal" id="seal" type="button" aria-label="Open invitation">
+        M♥T
+      </button>
+    </div>
+
+    <div class="scratch-card" id="scratchCard" aria-hidden="true">
+      <div class="scratch">
+        <div class="save-date">
+          <small>Save the date</small>
+          Wednesday<br>
+          January 27, 2027
+          <small>3:00 PM · Daraga, Albay</small>
+        </div>
+        <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>
+      </div>
+    </div>
+
+    <div class="opening-actions" id="openingActions">
+      <p>The date is revealed ✨</p>
+      <a class="btn btn-light" href="#story">Continue our story ↓</a>
+    </div>
+
+    <small class="photo-credit">
+      Mayon image: Wikimedia Commons / nish.iona, CC BY-SA 3.0
+    </small>
+  </section>
+
+  <main id="siteContent" class="site-content" aria-hidden="true">
+    <section id="story" class="hero section">
+      <div class="wrap">
+        <div class="eyebrow">Marlyn & Tihomir</div>
+        <h1>From Different Maps,<br>One Destination</h1>
+        <p>
+          Every love story begins somewhere. Ours began on opposite sides of the world—
+          different countries, cultures, and languages. Yet somehow, every road led us to each other.
+        </p>
+        <a class="btn" href="#bride">Begin our journey</a>
+      </div>
+    </section>
+
+    <section id="bride" class="section paper">
+      <div class="wrap compact-grid reveal">
+        <div class="portrait"></div>
+        <div class="profile">
+          <div class="eyebrow">Meet the bride</div>
+          <h2>Marlyn N. Napili</h2>
+          <p class="eyebrow eyebrow-blue">Sixth of seven siblings</p>
+          <p>
+            I am the sixth of seven siblings, raised in a home where faith, respect, and family
+            were always at the center of everything. Every lesson, sacrifice, and value my parents
+            shared helped shape the woman I am today.
+          </p>
+
+          <div class="parents">
+            <div><strong>Catalino Pererras Napili</strong><br><small>Father</small></div>
+            <div class="heart">♡</div>
+            <div><strong>Marcy Nidea Napili</strong><br><small>Mother</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap compact-grid reveal">
+        <div class="profile">
+          <div class="eyebrow">Meet the groom</div>
+          <h2>Tihomir Yanev</h2>
+          <p class="eyebrow eyebrow-blue">Eldest of two siblings</p>
+          <p>
+            Tihomir was raised in Bulgaria by a loving and supportive family. Growing up as the
+            older brother taught him responsibility, patience, and care. His quiet strength,
+            kindness, and unwavering support are some of the many reasons I fell in love with him.
+          </p>
+
+          <div class="parents">
+            <div><strong>Dimitar Yanev</strong><br><small>Father</small></div>
+            <div class="heart">♡</div>
+            <div><strong>Maya Yaneva</strong><br><small>Mother</small></div>
+          </div>
+        </div>
+        <div class="portrait"></div>
+      </div>
+    </section>
+
+    <section class="section gallery">
+      <div class="center narrow">
+        <div class="eyebrow">The moments between</div>
+        <h2>Our Story</h2>
+        <p>Swipe through our memories, like story highlights.</p>
+      </div>
+
+      <div class="story-strip" aria-label="Our story highlights">
+        <button class="story-bubble is-active" type="button" data-story="first">
+          <span class="story-ring"><span class="story-photo">01</span></span>
+          <span>First meeting</span>
+        </button>
+
+        <button class="story-bubble" type="button" data-story="distance">
+          <span class="story-ring"><span class="story-photo">02</span></span>
+          <span>Long distance</span>
+        </button>
+
+        <button class="story-bubble" type="button" data-story="adventures">
+          <span class="story-ring"><span class="story-photo">03</span></span>
+          <span>Adventures</span>
+        </button>
+
+        <button class="story-bubble" type="button" data-story="bulgaria">
+          <span class="story-ring"><span class="story-photo">04</span></span>
+          <span>Bulgaria</span>
+        </button>
+
+        <button class="story-bubble" type="button" data-story="philippines">
+          <span class="story-ring"><span class="story-photo">05</span></span>
+          <span>Philippines</span>
+        </button>
+      </div>
+
+      <div class="story-viewer wrap">
+        <div class="story-viewer-photo" id="storyViewerPhoto">
+          First selfie / first meeting photo
+        </div>
+        <div class="story-dots" id="storyDots" aria-hidden="true">
+          <span class="active"></span><span></span><span></span>
+        </div>
+        <p id="storyViewerCaption">The day our story stepped out of the screen and into real life.</p>
+      </div>
+    </section>
+
+    <section class="quote-banner section">
+      <div class="narrow reveal">
+        <h2>Different Maps.<br>Different Cultures.<br>One Family.</h2>
+        <div class="divider"></div>
+        <p class="script script-lg">
+          On January 27, 2027, our families and loved ones will gather in one place as we begin
+          our greatest adventure yet.
+        </p>
+      </div>
+    </section>
+
+    <section class="section paper">
+      <div class="narrow center reveal">
+        <h2 class="title-lg">The Celebration</h2>
+        <p class="script script-lg">
+          The greatest gift is having the people we love gathered in one place as we begin our forever.
+        </p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="wrap venue reveal">
+        <div class="venue-image">Daraga Church image</div>
+        <div class="venue-copy">
+          <div class="eyebrow">Wedding ceremony</div>
+          <h3>Where We Will Say “I Do”</h3>
+          <p><strong>Daraga Church – Our Lady of the Gate Parish</strong><br>Daraga, Albay, Philippines</p>
+          <p><strong>3:00 PM</strong><br>Please arrive 30 minutes early for parking and seating.</p>
+          <div class="actions">
+            <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Our+Lady+of+the+Gate+Parish+Daraga+Albay">View map</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Our+Lady+of+the+Gate+Parish+Daraga+Albay">Get directions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap venue reveal">
+        <div class="venue-copy">
+          <div class="eyebrow">Reception</div>
+          <h3>Where We’ll Celebrate Together</h3>
+          <p><strong>New Blossoms Events Place</strong><br>Tagas, Daraga, Albay, Philippines</p>
+          <p>Immediately following the ceremony.</p>
+          <div class="highlights">
+            <span class="pill">✨ Dinner</span>
+            <span class="pill">🥂 Toasts</span>
+            <span class="pill">🎤 Speeches</span>
+            <span class="pill">💃 First Dance</span>
+            <span class="pill">🎉 Celebration</span>
+          </div>
+          <div class="actions">
+            <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=New+Blossoms+Events+Place+Tagas+Daraga+Albay">View map</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=New+Blossoms+Events+Place+Tagas+Daraga+Albay">Get directions</a>
+          </div>
+        </div>
+        <div class="venue-image">Reception image</div>
+      </div>
+    </section>
+
+    <section class="section paper">
+      <div class="wrap reveal">
+        <div class="center narrow">
+          <div class="eyebrow">Those beside us</div>
+          <h2 class="title-lg">Our Wedding Party</h2>
+          <p>Presented as couples and small portrait groups to keep this part elegant and compact.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="party-grid">
+          <article class="party-card">
+            <div class="couple-photos">
+              <span class="avatar">LF</span><span class="avatar">JF</span>
+            </div>
+            <h3>Principal Sponsors</h3>
+            <p>Engr. Leo Angelo J. Francisco<br>& Mrs. Jackie Lenn B. Francisco</p>
+          </article>
+
+          <article class="party-card">
+            <div class="couple-photos">
+              <span class="avatar">RD</span><span class="avatar">MO</span>
+            </div>
+            <h3>Principal Sponsors</h3>
+            <p>Engr. Rolando M. Dacillo<br>& Engr. Marites E. Olesco</p>
+          </article>
+
+          <article class="party-card">
+            <div class="couple-photos">
+              <span class="avatar">RA</span><span class="avatar">MN</span>
+            </div>
+            <h3>Principal Sponsors</h3>
+            <p>Engr. Remigio R. Angeles Jr.<br>& Mrs. Myrna B. Nipa</p>
+          </article>
+
+          <article class="party-card">
+            <div class="couple-photos">
+              <span class="avatar">ET</span><span class="avatar">IT</span>
+            </div>
+            <h3>Principal Sponsors</h3>
+            <p>Mr. Eufracio R. Tolentino<br>& Mrs. Imelda S. Tolentino</p>
+          </article>
+
+          <article class="party-card">
+            <div class="couple-photos single">
+              <span class="avatar">EN</span>
+            </div>
+            <h3>Maid of Honor</h3>
+            <p>Ellavil N. Napili</p>
+          </article>
+
+          <article class="party-card">
+            <div class="couple-photos">
+              <span class="avatar">JM</span><span class="avatar">CN</span>
+            </div>
+            <h3>Bridesmaids</h3>
+            <p>Joan D. Misolania<br>& Clariza N. Napod</p>
+          </article>
+
+          <article class="party-card">
+            <div class="couple-photos">
+              <span class="avatar">CM</span><span class="avatar">RN</span>
+            </div>
+            <h3>Ceremony</h3>
+            <p>Cynthia O. Matutina<br>& Rowena Nabor</p>
+          </article>
+
+          <article class="party-card">
+            <div class="couple-photos">
+              <span class="avatar">CN</span><span class="avatar">CB</span>
+            </div>
+            <h3>Ceremony</h3>
+            <p>Charleen M. Nacion<br>& Charles Vimto S. Napile</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap compact-grid reveal">
+        <div>
+          <div class="eyebrow">Dress to celebrate</div>
+          <h2 class="title-lg">Dress Code</h2>
+          <p class="script script-lg">Semi-formal or polished casual attire inspired by our muted, timeless wedding palette.</p>
+          <p>
+            We warmly encourage elegant neutral shades. Kindly avoid white or bridal ivory,
+            neon colors, very bold prints, shorts, athletic wear, and overly casual footwear.
+          </p>
+        </div>
+
+        <div>
+          <div class="swatches">
+            <div class="swatch swatch-ivory">Soft ivory</div>
+            <div class="swatch swatch-champagne">Champagne</div>
+            <div class="swatch swatch-blue">Dusty blue</div>
+            <div class="swatch swatch-taupe">Taupe</div>
+          </div>
+          <p>
+            <strong>Principal Sponsors:</strong> soft ivory, champagne, light taupe.<br>
+            <strong>Guests:</strong> dusty blue, light gray, taupe, beige.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper">
+      <div class="narrow center reveal">
+        <div class="eyebrow">A gift from the heart</div>
+        <h2 class="title-lg">Wedding Gift</h2>
+        <p>
+          Your love, prayers, and presence are the greatest gifts we could ask for.
+          As we begin our married life in Europe, a monetary gift toward our first home
+          would be received with sincere gratitude.
+        </p>
+
+        <button class="btn gift-toggle" id="giftBtn" type="button">🎁 View gift details</button>
+
+        <div class="gift-details" id="giftDetails">
+          <p>
+            <strong>Bank Transfer</strong><br>
+            Account Name: To be added<br>
+            Bank Name: To be added<br>
+            Account Number: To be added
+          </p>
+          <p>
+            <strong>GCash</strong><br>
+            Mobile Number: To be added<br>
+            QR code: To be added
+          </p>
+        </div>
+
+        <div class="divider"></div>
+        <p class="script script-md">With love,<br>Marlyn & Tihomir ❤️</p>
+      </div>
+    </section>
+
+    <section id="faq" class="section paper">
+      <div class="center narrow">
+        <div class="eyebrow">Before the big day</div>
+        <h2 class="title-lg">Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="faq reveal">
+        <div class="faq-item">
+          <button class="faq-q" type="button">Can I bring my children?<span>＋</span></button>
+          <div class="faq-a">
+            Due to venue limitations, our wedding will be an adults-only celebration, except for immediate family.
+            We adore your little ones and sincerely appreciate your understanding.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Can I bring a date or plus one?<span>＋</span></button>
+          <div class="faq-a">
+            To keep our celebration intimate, we kindly ask that only named guests attend.
+            Principal Sponsors may be accompanied by their spouse or partner.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Can I take photos during the ceremony?<span>＋</span></button>
+          <div class="faq-a">
+            Absolutely. Please remain mindful of our photographers and videographers,
+            keep the aisle clear, and avoid blocking their view.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Can I share reception photos online?<span>＋</span></button>
+          <div class="faq-a">
+            Yes—we would love to see the celebration through your eyes.
+            Our official wedding hashtag will be added here soon.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rsvp" id="rsvp">
+      <div class="center narrow">
+        <div class="eyebrow eyebrow-gold-light">RSVP</div>
+        <h2 class="title-lg">Will You Celebrate With Us?</h2>
+        <p class="script script-lg">
+          Whether you are traveling from across the world or just across town,
+          your presence would mean the world to us.
+        </p>
+      </div>
+
+      <form class="form reveal" id="rsvpForm">
+        <label for="name">Full name</label>
+        <input id="name" name="name" required placeholder="Enter your full name" autocomplete="name">
+
+        <label>Will you be joining us?</label>
+        <label class="radio">
+          <input type="radio" name="attendance" value="yes" required>
+          <span>With joy, I’ll be there! 🎉</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="attendance" value="no">
+          <span>Regretfully, I won’t be able to attend.</span>
+        </label>
+
+        <label for="message">Leave us a message</label>
+        <textarea id="message" name="message" placeholder="Share your wishes, prayers, advice, or a message for us."></textarea>
+
+        <div class="swipe-submit" id="swipeSubmit" role="button" tabindex="0" aria-label="Swipe right to send RSVP">
+          <div class="swipe-track-text">Swipe right to send RSVP</div>
+          <div class="swipe-thumb" id="swipeThumb" aria-hidden="true">♥</div>
+        </div>
+
+        <p id="rsvpStatus" class="center form-status" aria-live="polite"></p>
+        <p class="storage-note">
+          Demo storage: saved only in this browser until a shared RSVP backend is connected.
+        </p>
+      </form>
+    </section>
+
+    <section class="countdown section" id="countdown">
+      <div class="countdown-overlay"></div>
+      <div class="center wrap reveal countdown-content">
+        <p class="script script-lg">Every sunrise brings us one day closer...</p>
+        <h2 class="title-lg">Until We Say “I Do”</h2>
+
+        <div class="timer">
+          <div class="timebox"><b id="days">0</b><span>Days</span></div>
+          <div class="timebox"><b id="hours">0</b><span>Hours</span></div>
+          <div class="timebox"><b id="minutes">0</b><span>Minutes</span></div>
+          <div class="timebox"><b id="seconds">0</b><span>Seconds</span></div>
+        </div>
+
+        <p>January 27, 2027 · 3:00 PM</p>
+        <p class="local-time-note" id="localTimeNote"></p>
+      </div>
+    </section>
+
+    <section class="farewell section">
+      <div class="narrow reveal">
+        <div class="opening-monogram farewell-monogram">M ♥ T</div>
+        <h2>Our Greatest Adventure Begins.</h2>
+        <p class="script script-lg">
+          Every love story begins with a single moment.<br>
+          Ours began with one swipe.<br><br>
+          See you on January 27, 2027.
+        </p>
+      </div>
+    </section>
+
+    <footer>Marlyn & Tihomir · Daraga, Albay · 2027</footer>
+  </main>
+
+  <canvas id="confetti" class="confetti-canvas" aria-hidden="true"></canvas>
+  <script src="script.js" defer></script>
+</body>
+</html>
