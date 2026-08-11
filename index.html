@@ -16,30 +16,111 @@
   <section id="opening" class="opening">
     <div class="mayon-scene" aria-hidden="true"></div>
 
-    <div class="opening-copy">
-      <div class="eyebrow eyebrow-light">From different maps, one destination</div>
-      <div class="opening-monogram">M ♥ T</div>
-      <p class="opening-month">January 2027</p>
-    </div>
-
     <div class="envelope-screen" id="envelope" aria-label="Wedding envelope">
-      <div class="flap flap-top"></div>
-      <div class="flap flap-right"></div>
-      <div class="flap flap-bottom"></div>
-      <div class="flap flap-left"></div>
+      <svg class="envelope-svg" viewBox="0 0 1000 1400" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="pinkPaper" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f8c8d0"/>
+            <stop offset=".48" stop-color="#eeb5c0"/>
+            <stop offset="1" stop-color="#d99aa9"/>
+          </linearGradient>
+          <linearGradient id="pinkFlap" x1=".15" y1="0" x2=".8" y2="1">
+            <stop offset="0" stop-color="#f9cbd2"/>
+            <stop offset=".58" stop-color="#eeb2bd"/>
+            <stop offset="1" stop-color="#d693a4"/>
+          </linearGradient>
+          <linearGradient id="blueLining" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#a9becb"/>
+            <stop offset="1" stop-color="#6f8da2"/>
+          </linearGradient>
+          <radialGradient id="sealGold" cx="40%" cy="30%" r="70%">
+            <stop offset="0" stop-color="#ffe4a0"/>
+            <stop offset=".28" stop-color="#e4bd61"/>
+            <stop offset=".72" stop-color="#b77a2e"/>
+            <stop offset="1" stop-color="#83501f"/>
+          </radialGradient>
+          <filter id="paperTexture" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency=".55" numOctaves="2" seed="7" result="noise"/>
+            <feColorMatrix in="noise" type="saturate" values="0" result="mono"/>
+            <feComponentTransfer in="mono" result="softNoise"><feFuncA type="table" tableValues="0 .075"/></feComponentTransfer>
+            <feBlend in="SourceGraphic" in2="softNoise" mode="soft-light"/>
+          </filter>
+          <filter id="sealShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#5a2b22" flood-opacity=".38"/>
+          </filter>
+          <filter id="flapShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#733c4c" flood-opacity=".24"/>
+          </filter>
+          <pattern id="microDots" width="18" height="18" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r=".75" fill="#fff" opacity=".13"/>
+          </pattern>
+        </defs>
+
+        <g class="svg-back">
+          <rect width="1000" height="1400" fill="url(#blueLining)"/>
+          <rect width="1000" height="1400" fill="url(#microDots)"/>
+        </g>
+
+        <g class="svg-panel svg-panel-left" filter="url(#paperTexture)">
+          <path d="M0 0 L500 710 L0 1400 Z" fill="url(#pinkPaper)"/>
+          <path d="M0 0 L500 710 L0 1400" fill="none" stroke="#f8d7dd" stroke-width="3" opacity=".55"/>
+        </g>
+
+        <g class="svg-panel svg-panel-right" filter="url(#paperTexture)">
+          <path d="M1000 0 L500 710 L1000 1400 Z" fill="url(#pinkPaper)"/>
+          <path d="M1000 0 L500 710 L1000 1400" fill="none" stroke="#f8d7dd" stroke-width="3" opacity=".55"/>
+        </g>
+
+        <g class="svg-panel svg-panel-bottom" filter="url(#paperTexture)">
+          <path d="M0 1400 L500 710 L1000 1400 Z" fill="url(#pinkFlap)"/>
+          <path d="M0 1400 L500 710 L1000 1400" fill="none" stroke="#f7d6dd" stroke-width="3" opacity=".65"/>
+          <g class="ornament ornament-bottom" fill="none" stroke="#f8dce1" stroke-width="2.6" opacity=".72">
+            <path d="M122 1275 C170 1185 214 1170 282 1238 C235 1234 206 1256 188 1308"/>
+            <path d="M878 1275 C830 1185 786 1170 718 1238 C765 1234 794 1256 812 1308"/>
+            <path d="M356 1330 C420 1282 462 1293 500 1340 C538 1293 580 1282 644 1330"/>
+            <path d="M155 1224 c-18 26-15 54 8 74 m45-95 c-12 35 3 61 31 77 m606-56 c18 26 15 54-8 74 m-45-95 c12 35-3 61-31 77"/>
+          </g>
+        </g>
+
+        <g class="svg-panel svg-panel-top" filter="url(#flapShadow)">
+          <path d="M0 0 H1000 V95 C1000 120 988 144 968 162 L500 700 L32 162 C12 144 0 120 0 95 Z" fill="url(#pinkFlap)"/>
+          <path d="M0 0 H1000 V95 C1000 120 988 144 968 162 L500 700 L32 162 C12 144 0 120 0 95" fill="none" stroke="#c79458" stroke-width="5" opacity=".78"/>
+          <g class="ornament" fill="none" stroke="#f9dce1" stroke-width="2.5" opacity=".78">
+            <path d="M78 77 C140 20 220 27 258 88 C205 71 161 86 123 130 C151 122 175 126 194 143"/>
+            <path d="M922 77 C860 20 780 27 742 88 C795 71 839 86 877 130 C849 122 825 126 806 143"/>
+            <path d="M357 68 C407 25 454 37 500 88 C546 37 593 25 643 68 C590 60 548 78 500 126 C452 78 410 60 357 68"/>
+            <path d="M142 178 C219 136 300 171 338 250 C285 216 237 213 194 233"/>
+            <path d="M858 178 C781 136 700 171 662 250 C715 216 763 213 806 233"/>
+          </g>
+        </g>
+      </svg>
 
       <button class="seal" id="seal" type="button" aria-label="Open invitation">
-        M♥T
+        <svg viewBox="0 0 220 220" aria-hidden="true">
+          <defs>
+            <radialGradient id="sealGoldButton" cx="40%" cy="30%" r="70%">
+              <stop offset="0" stop-color="#ffe4a0"/>
+              <stop offset=".28" stop-color="#e4bd61"/>
+              <stop offset=".72" stop-color="#b77a2e"/>
+              <stop offset="1" stop-color="#83501f"/>
+            </radialGradient>
+          </defs>
+          <path class="seal-rim" d="M110 12c14 0 25 10 37 14 13 4 28-1 39 7 11 8 12 23 20 34 8 11 23 17 26 31 3 13-8 25-8 39s11 26 8 39c-3 14-18 20-26 31-8 11-9 26-20 34-11 8-26 3-39 7-12 4-23 14-37 14s-25-10-37-14c-13-4-28 1-39-7-11-8-12-23-20-34-8-11-23-17-26-31-3-13 8-25 8-39s-11-26-8-39c3-14 18-20 26-31 8-11 9-26 20-34 11-8 26-3 39-7 12-4 23-14 37-14z"/>
+          <path class="seal-heart" d="M110 60c-22-23-62-8-62 26 0 36 62 70 62 70s62-34 62-70c0-34-40-49-62-26z"/>
+          <path class="seal-inner" d="M110 36c41 0 74 33 74 74s-33 74-74 74-74-33-74-74 33-74 74-74z"/>
+          <text x="110" y="101" text-anchor="middle">Tap to</text>
+          <text x="110" y="128" text-anchor="middle">Open</text>
+          <path class="seal-flourish" d="M72 145c16 9 60 9 76 0M84 151c8 5 18 8 26 8s18-3 26-8"/>
+        </svg>
       </button>
     </div>
 
     <div class="scratch-card" id="scratchCard" aria-hidden="true">
       <div class="scratch">
         <div class="save-date">
-          <small>Save the date</small>
-          Wednesday<br>
-          January 27, 2027
-          <small>3:00 PM · Daraga, Albay</small>
+          <span>JANUARY 27, 2027</span>
+          <small>♡</small>
+          <span>3:00 PM</span>
         </div>
         <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>
       </div>
@@ -50,9 +131,6 @@
       <a class="btn btn-light" href="#story">Continue our story ↓</a>
     </div>
 
-    <small class="photo-credit">
-      Mayon image: Wikimedia Commons / nish.iona, CC BY-SA 3.0
-    </small>
   </section>
 
   <main id="siteContent" class="site-content" aria-hidden="true">

@@ -153,22 +153,24 @@ function openEnvelope() {
   getAudioContext();
   envelope.classList.add("open");
 
+  // Let the four clipped envelope panels physically fold away while the
+  // supplied open-envelope artwork is revealed underneath.
   window.setTimeout(() => {
     opening.classList.add("scene-visible");
-  }, 250);
+  }, 1050);
 
   window.setTimeout(() => {
     envelope.classList.add("opening-gone");
-  }, 950);
+  }, 1450);
 
-  // Requested sequence:
-  // envelope opens -> Mayon appears -> 1 second -> scratch card appears.
+  // Give the clean Mayon view a cinematic beat before the scratch card arrives.
   window.setTimeout(() => {
+    opening.classList.add("scratch-stage");
     scratchCard.classList.add("show");
     scratchCard.setAttribute("aria-hidden", "false");
     initializeScratchCard();
     scratchReady = true;
-  }, 1950);
+  }, 2450);
 }
 
 /* =========================
@@ -189,29 +191,8 @@ function initializeScratchCard() {
   scratchContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
   scratchContext.globalCompositeOperation = "source-over";
 
-  const gradient = scratchContext.createLinearGradient(
-    0,
-    0,
-    bounds.width,
-    bounds.height,
-  );
-
-  gradient.addColorStop(0, "#8f713d");
-  gradient.addColorStop(0.45, "#d8bd7a");
-  gradient.addColorStop(1, "#9c7b42");
-
-  scratchContext.fillStyle = gradient;
+  scratchContext.fillStyle = "#efb1a4";
   scratchContext.fillRect(0, 0, bounds.width, bounds.height);
-
-  scratchContext.fillStyle = "rgba(255,255,255,0.78)";
-  scratchContext.font = "600 16px Montserrat";
-  scratchContext.textAlign = "center";
-  scratchContext.textBaseline = "middle";
-  scratchContext.fillText(
-    "SCRATCH TO REVEAL",
-    bounds.width / 2,
-    bounds.height / 2,
-  );
 
   scratchContext.globalCompositeOperation = "destination-out";
 }
@@ -262,6 +243,7 @@ function checkScratchProgress() {
 
 function finishScratchReveal() {
   scratchComplete = true;
+  opening.classList.add("revealed-stage");
   stopScratchSound();
 
   scratchContext.clearRect(

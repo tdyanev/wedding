@@ -13,7 +13,7 @@
   --taupe: #b8aa9c;
   --line: rgba(55, 70, 80, 0.16);
   --shadow: 0 24px 80px rgba(23, 36, 47, 0.16);
-  --heading-font: "Brittany Signature", Allura, "Cormorant Garamond", cursive;
+  --heading-font: "Playlist Script", Allura, "Cormorant Garamond", cursive;
   --serif-font: "Cormorant Garamond", Georgia, serif;
   --sans-font: Montserrat, Arial, sans-serif;
 }
@@ -136,214 +136,154 @@ h3, .serif { font-family: var(--serif-font); }
 .script-lg { font-size: 1.35rem; }
 
 /* =========================
-   Full-screen envelope intro
+   SVG cinematic opening
    ========================= */
 .opening {
-  position: relative;
-  min-height: 100svh;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  background: var(--blue);
-  color: #fff;
+  position:relative;
+  min-height:100svh;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  background:#1f3038;
+  color:#fff;
 }
 
 .mayon-scene {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: scale(1.04);
-  background:
-    linear-gradient(to top, rgba(27, 40, 48, 0.66), rgba(27, 40, 48, 0.10)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Mayon%20Volcano%20in%20Daraga,%20Albay.JPG")
-    center 42% / cover no-repeat;
-  transition: opacity 0.8s ease, transform 1.6s ease;
+  position:absolute;
+  inset:0;
+  opacity:0;
+  background:url("assets/mayon-clean.png") center/cover no-repeat;
+  transform:scale(1.025);
+  transition:opacity .8s ease, transform 1.8s cubic-bezier(.2,.75,.2,1);
 }
-
-.opening.scene-visible .mayon-scene {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.opening-copy {
-  position: absolute;
-  z-index: 4;
-  top: max(28px, env(safe-area-inset-top));
-  left: 50%;
-  width: min(90vw, 760px);
-  transform: translateX(-50%);
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s ease 0.8s;
-}
-
-.opening.scene-visible .opening-copy { opacity: 1; }
-
-.opening-monogram {
-  margin-top: 8px;
-  font-family: var(--heading-font);
-  font-size: clamp(3.5rem, 10vw, 6rem);
-  line-height: 0.95;
-}
-
-.opening-month {
-  margin: 8px 0 0;
-  font-size: 0.68rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-}
+.opening.scene-visible .mayon-scene { opacity:1; transform:scale(1); }
 
 .envelope-screen {
-  position: absolute;
-  z-index: 10;
-  inset: 0;
-  overflow: hidden;
-  background: var(--pink);
+  position:absolute;
+  z-index:10;
+  inset:0;
+  overflow:hidden;
+  background:#eab2bd;
+  perspective:1500px;
+  transition:opacity .72s ease, transform .95s cubic-bezier(.22,.78,.25,1);
 }
 
-.flap {
-  position: absolute;
-  inset: 0;
-  transform-origin: center;
+.envelope-svg {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+  overflow:visible;
+}
+
+.svg-panel {
+  transform-box:fill-box;
+  backface-visibility:hidden;
+  will-change:transform,opacity,filter;
   transition:
-    transform 0.9s cubic-bezier(0.7, 0, 0.2, 1),
-    opacity 0.7s ease;
-  will-change: transform;
+    transform 1.28s cubic-bezier(.2,.72,.18,1),
+    opacity .92s ease .18s,
+    filter .75s ease;
 }
 
-.flap-top {
-  background: linear-gradient(180deg, #f4d5dc, #d7a2b0);
-  clip-path: polygon(0 0, 100% 0, 50% 50%);
-  transform-origin: 50% 0;
+.svg-panel-top { transform-origin:50% 0%; }
+.svg-panel-bottom { transform-origin:50% 100%; }
+.svg-panel-left { transform-origin:0% 50%; }
+.svg-panel-right { transform-origin:100% 50%; }
+
+.envelope-screen.open .svg-panel-top {
+  transform:translateY(-27%) rotateX(76deg) scale(1.02);
+  opacity:0;
+  filter:brightness(1.08);
+}
+.envelope-screen.open .svg-panel-bottom {
+  transform:translateY(31%) rotateX(-72deg) scale(1.02);
+  opacity:0;
+  filter:brightness(.95);
+}
+.envelope-screen.open .svg-panel-left {
+  transform:translateX(-32%) rotateY(72deg) scale(1.015);
+  opacity:0;
+}
+.envelope-screen.open .svg-panel-right {
+  transform:translateX(32%) rotateY(-72deg) scale(1.015);
+  opacity:0;
 }
 
-.flap-right {
-  background: linear-gradient(270deg, #e6bac5, #c98e9f);
-  clip-path: polygon(100% 0, 100% 100%, 50% 50%);
-  transform-origin: 100% 50%;
+.svg-back {
+  opacity:1;
+  transition:opacity .55s ease .7s;
 }
-
-.flap-bottom {
-  background: linear-gradient(0deg, #efcad2, #cc96a5);
-  clip-path: polygon(0 100%, 100% 100%, 50% 50%);
-  transform-origin: 50% 100%;
-}
-
-.flap-left {
-  background: linear-gradient(90deg, #e6b8c4, #ca91a1);
-  clip-path: polygon(0 0, 50% 50%, 0 100%);
-  transform-origin: 0 50%;
-}
-
-.envelope-screen.open .flap-top { transform: translateY(-105%) rotateX(18deg); }
-.envelope-screen.open .flap-right { transform: translateX(105%) rotateY(-18deg); }
-.envelope-screen.open .flap-bottom { transform: translateY(105%) rotateX(-18deg); }
-.envelope-screen.open .flap-left { transform: translateX(-105%) rotateY(18deg); }
+.envelope-screen.open .svg-back { opacity:.18; }
 
 .envelope-screen.opening-gone {
-  pointer-events: none;
-  visibility: hidden;
+  opacity:0;
+  transform:scale(1.035);
+  pointer-events:none;
 }
 
 .seal {
-  position: absolute;
-  z-index: 20;
-  left: 50%;
-  top: 50%;
-  width: 84px;
-  height: 84px;
-  border: 0;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle at 32% 28%, #9eb7ca, #587287 70%);
-  color: #f8ecd0;
-  font: 2rem var(--heading-font);
-  box-shadow:
-    0 10px 30px rgba(28, 42, 53, 0.30),
-    inset 0 0 0 4px rgba(255, 255, 255, 0.12);
-  cursor: pointer;
-  transition: 0.25s ease;
+  position:absolute;
+  z-index:20;
+  left:50%;
+  top:52%;
+  width:clamp(122px,19vw,220px);
+  aspect-ratio:1;
+  padding:0;
+  transform:translate(-50%,-50%);
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  filter:drop-shadow(0 12px 18px rgba(84,48,29,.35));
+  animation:sealBreathe 2.4s ease-in-out infinite;
+  transition:transform .25s ease, opacity .24s ease, filter .25s ease;
 }
-
-.seal:hover { transform: translate(-50%, -50%) scale(1.07); }
-
-.seal::after {
-  content: "Click me";
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 12px);
-  transform: translateX(-50%);
-  padding: 7px 11px;
-  border-radius: 7px;
-  background: #263744;
-  color: #fffdf7;
-  font: 600 11px var(--sans-font);
-  letter-spacing: 0.04em;
-  white-space: nowrap;
+.seal svg { width:100%; height:100%; overflow:visible; }
+.seal-rim { fill:url(#sealGoldButton); stroke:#f7da8b; stroke-width:4; }
+.seal-heart { fill:none; stroke:#7a501f; stroke-width:3; opacity:.55; transform:scale(.44); transform-origin:center; }
+.seal-inner { fill:rgba(255,221,132,.22); stroke:#7e541e; stroke-width:3; }
+.seal text {
+  fill:#6c471d;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:24px;
+  font-style:italic;
+  font-weight:600;
+  pointer-events:none;
 }
-
+.seal-flourish { fill:none; stroke:#7a501f; stroke-width:2; opacity:.65; }
+.seal:hover { transform:translate(-50%,-50%) scale(1.04); }
+.seal:active { transform:translate(-50%,-50%) scale(.97); }
 .envelope-screen.open .seal {
-  opacity: 0;
-  pointer-events: none;
+  pointer-events:none;
+  animation:none;
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.72) rotate(-5deg);
 }
 
-.scratch-card {
-  position: relative;
-  z-index: 6;
-  width: min(440px, calc(100vw - 36px));
-  height: min(280px, 52vw);
-  min-height: 230px;
-  padding: 16px;
-  border: 1px solid rgba(185, 151, 91, 0.38);
-  border-radius: 12px;
-  background: rgba(255, 253, 247, 0.96);
-  box-shadow: 0 28px 80px rgba(20, 31, 40, 0.30);
-  opacity: 0;
-  transform: translateY(25px) scale(0.96);
-  pointer-events: none;
-  transition: opacity 0.45s ease, transform 0.55s ease;
+@keyframes sealBreathe {
+  0%,100% { filter:drop-shadow(0 12px 18px rgba(84,48,29,.35)) drop-shadow(0 0 0 rgba(255,226,154,0)); }
+  50% { filter:drop-shadow(0 12px 20px rgba(84,48,29,.38)) drop-shadow(0 0 16px rgba(255,226,154,.62)); }
 }
 
-.scratch-card.show {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
+@media (min-aspect-ratio: 3/4) {
+  .mayon-scene {
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-color:#1f3038;
+  }
 }
 
-.scratch {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  text-align: center;
-}
+.scratch-card { position:absolute; z-index:6; left:50%; top:66.2%; width:min(31vw,470px); aspect-ratio:2.22/1; padding:0; border:0; border-radius:30px; background:rgba(159,190,203,.82); box-shadow:none; opacity:0; transform:translate(-50%,-50%) scale(.96); pointer-events:none; transition:opacity .35s ease,transform .45s ease; overflow:hidden; }
+.scratch-card.show { opacity:1; transform:translate(-50%,-50%); pointer-events:auto; }
+.scratch { position:relative; width:100%; height:100%; overflow:hidden; display:grid; place-items:center; text-align:center; border-radius:inherit; }
+.save-date { color:#fff8e9; font-family:"Cormorant Garamond",serif; font-size:clamp(1rem,2.2vw,2rem); line-height:1.05; letter-spacing:.04em; text-shadow:0 1px 2px rgba(0,0,0,.18); }
+.save-date span { display:block; }
+.save-date small { display:block; margin:.12em 0; color:#f0d68d; font:500 1em "Cormorant Garamond",serif; letter-spacing:0; }
+#scratchCanvas { position:absolute; z-index:2; inset:0; width:100%; height:100%; touch-action:none; cursor:crosshair; }
 
-.save-date {
-  color: #657e92;
-  font-family: var(--heading-font);
-  font-size: clamp(2rem, 7vw, 3.15rem);
-  line-height: 0.95;
-}
-
-.save-date small {
-  display: block;
-  margin: 10px;
-  color: var(--gold);
-  font: 500 0.64rem var(--sans-font);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-#scratchCanvas {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  touch-action: none;
-  cursor: crosshair;
+@media (min-aspect-ratio: 3/4) {
+  .scratch-card { width:min(31vh,470px); top:66.2%; }
 }
 
 .opening-actions {
