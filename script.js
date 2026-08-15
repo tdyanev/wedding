@@ -56,7 +56,9 @@ function finishCinematicIntro() {
   if (cinematicIntroFinished) return;
   cinematicIntroFinished = true;
 
-  // Continue from the doors into the Mayon volcano reveal.
+  // Keep the *exact same* intro scene and typography visible. The parent
+  // opening becomes only a transparent interaction layer for the scratch card,
+  // so the title cannot jump, resize, or be recreated during this handoff.
   document.body.classList.remove("intro-active");
   opening.classList.add("scene-visible", "scratch-stage");
 
@@ -64,15 +66,14 @@ function finishCinematicIntro() {
   envelope.classList.add("opening-gone");
   envelope.setAttribute("aria-hidden", "true");
 
+  if (cinematicIntro) {
+    cinematicIntro.classList.add("hold-scene");
+  }
+
   scratchCard.classList.add("show");
   scratchCard.setAttribute("aria-hidden", "false");
   initializeScratchCard();
   scratchReady = true;
-
-  if (cinematicIntro) {
-    cinematicIntro.classList.add("is-finished");
-    window.setTimeout(() => cinematicIntro.remove(), 1250);
-  }
 
   window.scrollTo({ top: 0, behavior: "auto" });
 }
@@ -294,9 +295,8 @@ function finishScratchReveal() {
   scratchCanvas.style.pointerEvents = "none";
   openingActions.classList.add("show");
 
-  siteContent.classList.add("unlocked");
-  siteContent.setAttribute("aria-hidden", "false");
-  document.body.classList.remove("date-locked");
+  // Keep the volcano intro scene on screen after the scratch is revealed.
+  // The main invitation remains locked until the guest explicitly continues.
 
   launchConfetti();
   playConfettiSound();
@@ -333,7 +333,22 @@ function stopScratching() {
 
 openingActions.querySelector("a").addEventListener("click", (event) => {
   event.preventDefault();
-  document.querySelector("#story").scrollIntoView({ behavior: "smooth" });
+
+  // Only the Continue action leaves the volcano reveal scene.
+  siteContent.classList.add("unlocked");
+  siteContent.setAttribute("aria-hidden", "false");
+  document.body.classList.remove("date-locked");
+
+  if (cinematicIntro) {
+    cinematicIntro.classList.remove("hold-scene");
+    cinematicIntro.classList.add("is-finished");
+    window.setTimeout(() => cinematicIntro.remove(), 1250);
+  }
+
+  opening.classList.add("opening-complete");
+  window.setTimeout(() => {
+    document.querySelector("#story").scrollIntoView({ behavior: "smooth" });
+  }, 350);
 });
 
 /* =========================
