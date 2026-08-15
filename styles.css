@@ -1023,3 +1023,51 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* =========================
+   Cinematic ceremonial-door intro
+   ========================= */
+.cinematic-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: #0d0709;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.15s ease, visibility 1.15s ease;
+}
+.cinematic-intro iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #0d0709;
+}
+.cinematic-intro.is-finished {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+body.intro-active > #opening { display: none; }
+
+/* Refined post-door scratch card */
+.scratch-card {
+  width:min(34vw,500px);
+  border:1px solid rgba(255,255,255,.46);
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(169,198,210,.94),rgba(112,151,170,.92));
+  box-shadow:0 24px 65px rgba(7,24,33,.30),inset 0 1px 0 rgba(255,255,255,.58);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+}
+.scratch-card::before {
+  content:"SCRATCH TO REVEAL"; position:absolute; z-index:4; left:50%; top:12px;
+  transform:translateX(-50%); white-space:nowrap; color:rgba(255,255,255,.82);
+  font:500 clamp(.55rem,.8vw,.72rem) "Montserrat",sans-serif; letter-spacing:.22em;
+  pointer-events:none;
+}
+.save-date { padding:1.35rem 1rem .7rem; font-size:clamp(1rem,2vw,1.8rem); }
+#scratchCanvas { border-radius:inherit; }
+@media (max-width:700px) { .scratch-card { width:min(82vw,430px); top:66%; border-radius:20px; } }
+

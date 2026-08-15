@@ -45,6 +45,44 @@ const countdownElements = {
 
 const confettiCanvas = document.querySelector("#confetti");
 
+
+/* =========================
+   Cinematic intro handoff
+   ========================= */
+const cinematicIntro = document.querySelector("#cinematicIntro");
+let cinematicIntroFinished = false;
+
+function finishCinematicIntro() {
+  if (cinematicIntroFinished) return;
+  cinematicIntroFinished = true;
+
+  // Continue from the doors into the Mayon volcano reveal.
+  document.body.classList.remove("intro-active");
+  opening.classList.add("scene-visible", "scratch-stage");
+
+  // Keep the old envelope out of the new flow.
+  envelope.classList.add("opening-gone");
+  envelope.setAttribute("aria-hidden", "true");
+
+  scratchCard.classList.add("show");
+  scratchCard.setAttribute("aria-hidden", "false");
+  initializeScratchCard();
+  scratchReady = true;
+
+  if (cinematicIntro) {
+    cinematicIntro.classList.add("is-finished");
+    window.setTimeout(() => cinematicIntro.remove(), 1250);
+  }
+
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+window.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "wedding-intro-complete") {
+    finishCinematicIntro();
+  }
+});
+
 /* =========================
    Small audio effects
    ========================= */
